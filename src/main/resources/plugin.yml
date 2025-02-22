@@ -1,0 +1,22 @@
+name: WebAdminPlugin
+main: online.ebatel.WebAdminPlugin
+version: 1.0
+api-version: 1.16
+author: "Admin"
+description: "return players by playerlist and server statistic by serverstat"
+commands:
+  serverstat:
+    description: "all players list"
+    usage: "/serverstat"
+    permission: serverstat.use
+  playerlist:
+    description: "all players list"
+    usage: "/playerlist"
+    permission: playerlist.use
+permissions:
+  playerlist.use:
+    description: "allow to execute /playerlist"
+    default: true
+  serverstat.use:
+    description: "allow to execute /serverstat"
+    default: true
