@@ -29,6 +29,7 @@ class PlayerListCommand : CommandExecutor {
                 "uuid" to offlinePlayer.uniqueId.toString(),
                 "isOp" to offlinePlayer.isOp,
                 "isOnline" to offlinePlayer.isOnline,
+                "isBanned" to offlinePlayer.isBanned,
                 "gameMode" to gameMode
             )
         }
