@@ -1,4 +1,4 @@
-package online.ebatel
+package online.ebatel.bukkit
 
 import org.bukkit.plugin.java.JavaPlugin
 

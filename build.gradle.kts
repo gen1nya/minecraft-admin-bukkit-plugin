@@ -1,36 +1,29 @@
 plugins {
-    kotlin("jvm") version "2.1.0"
-    id("com.github.johnrengelman.shadow") version "8.1.1"
+    kotlin("jvm") version "2.1.0" apply false
 }
 
-group = "online.ebatel"
-version = "1.0"
+allprojects {
+    group = "online.ebatel"
+    version = "1.0"
 
-repositories {
-    mavenCentral()
-    maven("https://repo.papermc.io/repository/maven-public/")
+    repositories {
+        mavenCentral()
+    }
 }
 
-dependencies {
-    testImplementation(kotlin("test"))
-    compileOnly("io.papermc.paper:paper-api:1.20.4-R0.1-SNAPSHOT")
-}
+subprojects {
+    // Apply Kotlin only to common and bukkit modules
+    if (name != "forge") {
+        apply(plugin = "org.jetbrains.kotlin.jvm")
 
-tasks.test {
-    useJUnitPlatform()
-}
-kotlin {
-    jvmToolchain(17)
-}
+        tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
+            kotlinOptions.jvmTarget = "17"
+        }
+    }
 
-tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
-    kotlinOptions.jvmTarget = "17"
-}
-
-tasks {
-    shadowJar {
-        archiveBaseName.set("WebAdminPlugin")
-        archiveClassifier.set("")
-        archiveVersion.set("")
+    pluginManager.withPlugin("java") {
+        configure<JavaPluginExtension> {
+            toolchain.languageVersion.set(JavaLanguageVersion.of(17))
+        }
     }
 }

@@ -1,5 +1,5 @@
 name: WebAdminPlugin
-main: online.ebatel.WebAdminPlugin
+main: online.ebatel.bukkit.WebAdminPlugin
 version: 1.0
 api-version: 1.16
 author: "Admin"
