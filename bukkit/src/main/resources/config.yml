@@ -1,0 +1,10 @@
+# Minecraft Admin Plugin Configuration
+
+# Webhook settings for chat forwarding
+webhook:
+  # Enable/disable chat forwarding
+  enabled: false
+  # Admin panel webhook URL (e.g., https://mc-admin.example.com/api/servers/YOUR_SERVER_ID/chat/webhook)
+  url: ""
+  # Server ID in admin panel
+  serverId: "default"
