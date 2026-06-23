@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "webadminplugin",
+  "version": "${version}",
+  "name": "WebAdminPlugin",
+  "description": "Server administration mod providing /playerlist and /serverstat commands and chat webhook forwarding to the admin panel.",
+  "authors": ["Admin"],
+  "contact": {
+    "repo": "https://github.com/gen1nya/minecraft-admin-bukkit-plugin"
+  },
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      {
+        "adapter": "kotlin",
+        "value": "online.ebatel.fabric.WebAdminMod"
+      }
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=0.15.0",
+    "minecraft": ">=1.21 <1.22",
+    "java": ">=21",
+    "fabric-api": "*",
+    "fabric-language-kotlin": ">=1.12.0"
+  }
+}
